@@ -8,9 +8,9 @@ interface Teste {
 
 }
 
-server.get('/', (req, res) => {
+server.get('/teste', (status, res) => {//retornos da requisição
 
-    return res.send('Olá, DEV!');
+    return res.send('Primeira API rest rodando!');
 });
 
 
