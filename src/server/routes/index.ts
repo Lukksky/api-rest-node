@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { StatusCodes } from 'http-status-codes'; 
 
 const router = Router();
 
@@ -14,9 +15,9 @@ router.get('/query', (req, response) => {//o query permite passar os dados diret
     return response.json(req.body);
 });
 
-router.post('/', (req, response) => {//retornos da requisição
+router.get('/', (req, response) => {//nesse exemplo foi necessário instalar pacotes "npm add http-status-codes" e importar a biblioteca statuscodes
     console.log(req.body);
-    return response.json(req.body);
+    return response.status(StatusCodes.BAD_REQUEST).json(req.body); //Dessa forma, ao invés de colocar manualmente o status code, ao puxar o statuscodes ele dá as sugestoes do status
 });
 
 router.get('/header', (req, response) => {//retornos da requisição tipo header
