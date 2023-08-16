@@ -1,8 +1,13 @@
 import { Router } from 'express';
 import { StatusCodes } from 'http-status-codes'; 
 
+
+import { cidadesController } from './../controllers';
+
+
 const router = Router();
 
+router.post('/cidades', cidadesController.create);
 
 
 router.get('/messages', (req, response) => {//retornos da requisição
